@@ -1,0 +1,92 @@
+SQL Question DAY1️⃣:
+------------------------------
+PROBLEM STATEMENT
+Employee_8 Table has four columns namely EmpID EmpName, Salary and DeptID
+Write a SQL to find all Employee_8s who earn more than the average salary in their corresponding department.
+------------------------------
+
+
+-------------------------------------------------------------------------
+Table and Insert SQL Script :
+-------------------------------------------------------------------------
+CREATE Table Employee_8
+(
+EmpID INT,
+EmpName Varchar(30),
+Salary Float,
+DeptID INT
+);
+
+INSERT INTO Employee_8 VALUES(1001,'Mark',60000,2);
+INSERT INTO Employee_8 VALUES(1002,'Antony',40000,2);
+INSERT INTO Employee_8 VALUES(1003,'Andrew',15000,1);
+INSERT INTO Employee_8 VALUES(1004,'Peter',35000,1);
+INSERT INTO Employee_8 VALUES(1005,'John',55000,1);
+INSERT INTO Employee_8 VALUES(1006,'Albert',25000,3);
+INSERT INTO Employee_8 VALUES(1007,'Donald',35000,3);
+
+------------------------------
+input table
+------------------------------
++-------+---------+--------+--------+
+| EmpID | EmpName | Salary | DeptID |
++-------+---------+--------+--------+
+| 1001 | Mark | 60000 | 2 |
+| 1002 | Antony | 40000 | 2 |
+| 1003 | Andrew | 15000 | 1 |
+| 1004 | Peter | 35000 | 1 |
+| 1005 | John | 55000 | 1 |
+| 1006 | Albert | 25000 | 3 |
+| 1007 | Donald | 35000 | 3 |
++-------+---------+--------+--------+
+
+------------------------------
+Expected OUTPUT
+------------------------------
++---------+--------+--------+
+| EmpName | DeptID | Salary |
++---------+--------+--------+
+| Mark | 2 | 60000 |
+| John | 1 | 55000 |
+| Donald | 3 | 35000 |
++---------+--------+--------+
+
+------------------------------
+solution
+------------------------------
+------------------------------
+Method 1
+------------------------------
+with cte as
+(
+select
+avg(Salary) as AV,
+DeptID
+from
+Employee_8
+group by DeptID
+)
+select E.EmpName,
+E.DeptID,
+E.Salary
+from
+Employee_8 E
+join
+cte C on E.DeptID=C.DeptID
+where E.Salary>AV;
+
+------------------------------
+Method 2:
+------------------------------
+Select EmpName, DeptID, Salary from (select EmpID, EmpName, DeptID, Salary, AVG(Salary) over (Partition By DeptID) avs from Employee_8 order by DeptID) where Salary>avs order by Salary desc;
+
+------------------------------
+End
+------------------------------
+
+Tool Used: MYSQL
+
+#sql #database #dataanalyst #practices
+#data #technology #learning #interview
+#dataengineering #dataanalytics #scenario
+#sqlqueries #learningeveryday #day1
