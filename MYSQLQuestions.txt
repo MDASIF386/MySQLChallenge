@@ -167,3 +167,5 @@ JOIN (
   GROUP BY DeptID
 ) max_salaries
 ON e.DeptID = max_salaries.DeptID AND e.Salary = max_salaries.MaxSalary;
+
+#dataanalytics
