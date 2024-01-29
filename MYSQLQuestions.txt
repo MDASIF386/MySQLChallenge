@@ -168,4 +168,136 @@ JOIN (
 ) max_salaries
 ON e.DeptID = max_salaries.DeptID AND e.Salary = max_salaries.MaxSalary;
 
-#dataanalytics
+
+
+SQL Question DAY 5️⃣  : 
+
+
+
+PROBLEM STATEMENT:
+
+Transatcion_Tbl_1 Table has four columns CustID, TranID, TranAmt, and TranDate. User has to display all these fields along with maximum TranAmt for each CustID and ratio of TranAmt and maximum TranAmt for each transaction.
+
+ -----------------
+
+Outcome:
+
+ ------------------------------
+
+ Create insert query 
+
+ ------------------------------
+
+CREATE TABLE sql_question.Transaction_Tbl_1 
+
+(
+
+ CustID int ,
+
+ TranID int ,
+
+ TranAmt float ,
+
+ TranDate date 
+
+) ;
+
+
+
+INSERT into Transaction_Tbl_1 VALUES (1001, 20001, 10000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1001, 20002, 15000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1001, 20003, 80000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1001, 20004, 20000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1002, 30001, 7000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1002, 30002, 15000, CAST('2020-04-25' AS Date));
+
+INSERT into Transaction_Tbl_1 VALUES (1002, 30003, 22000, CAST('2020-04-25' AS Date));
+
+
+
++--------+--------+---------+------------+
+
+| CustID | TranID | TranAmt | TranDate |
+
++--------+--------+---------+------------+
+
+| 1001 | 20001 | 10000 | 2020-04-25 |
+
+| 1001 | 20002 | 15000 | 2020-04-25 |
+
+| 1001 | 20003 | 80000 | 2020-04-25 |
+
+| 1001 | 20004 | 20000 | 2020-04-25 |
+
+| 1002 | 30001 | 7000 | 2020-04-25 |
+
+| 1002 | 30002 | 15000 | 2020-04-25 |
+
+| 1002 | 30003 | 22000 | 2020-04-25 |
+
++--------+--------+---------+------------+
+
+Expected output :
+
++--------+--------+---------+------------+-----------------+-------------------------+
+
+| CustID | TranID | TranAmt | TranDate | maximum_TranAmt | TranAmt/maximum_TranAmt |
+
++--------+--------+---------+------------+-----------------+-------------------------+
+
+| 1001 | 20001 | 10000 | 2020-04-25 | 80000 | 0.125 |
+
+| 1001 | 20002 | 15000 | 2020-04-25 | 80000 | 0.1875 |
+
+| 1001 | 20003 | 80000 | 2020-04-25 | 80000 | 1 |
+
+| 1001 | 20004 | 20000 | 2020-04-25 | 80000 | 0.25 |
+
+| 1002 | 30001 | 7000 | 2020-04-25 | 22000 | 0.3181818181818182 |
+
+| 1002 | 30002 | 15000 | 2020-04-25 | 22000 | 0.6818181818181818 |
+
+| 1002 | 30003 | 22000 | 2020-04-25 | 22000 | 1 |
+
++--------+--------+---------+------------+-----------------+-------------------------+
+
+
+
+Solution:
+
+SELECT 
+
+  CustID, 
+
+  TranID, 
+
+  TranAmt, 
+
+  TranDate, 
+
+  maximum_TranAmt, 
+
+  (TranAmt / maximum_TranAmt) AS TranAmt_Ratio
+
+FROM 
+
+  (SELECT 
+
+    CustID, 
+
+    TranID, 
+
+    TranAmt, 
+
+    TranDate, 
+
+    MAX(TranAmt) OVER (PARTITION BY CustID ORDER BY CustID) AS maximum_TranAmt 
+
+  FROM 
+
+    Transaction_Tbl_1) AS temp
