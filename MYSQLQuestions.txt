@@ -304,3 +304,77 @@ FROM
     
 
     #data
+
+    SQL Question DAY 3️⃣ :
+------------------------------
+PROBLEM STATEMENT
+Employee_8 Table has four columns namely EmpID EmpName, Salary and DeptID
+Write a SQL to find all Employee_New who earn Second highest salary in their respective department.
+------------------------------
+
+
+-------------------------------------------------------------------------
+Table and Insert SQL Script :
+-------------------------------------------------------------------------
+CREATE Table Employee_8
+(
+EmpID INT,
+EmpName Varchar(30),
+Salary Float,
+DeptID INT
+);
+
+INSERT INTO Employee_New VALUES(1001,'Ronaldo',60000,2);
+INSERT INTO Employee_New VALUES(1002,'Messi',40000,2);
+INSERT INTO Employee_New VALUES(1003,'Vini',43000,2);
+INSERT INTO Employee_New VALUES(1004,'Mbappe',15000,1);
+INSERT INTO Employee_New VALUES(1005,'Giroud',35000,1);
+INSERT INTO Employee_New VALUES(1006,'Rashford',45000,1);
+INSERT INTO Employee_New VALUES(1007,'Sancho',25000,3);
+INSERT INTO Employee_New VALUES(1008,'Ramos',75000,3);
+INSERT INTO Employee_New VALUES(1009,'Gavi',95000,3);
+
+------------------------------
+Input table:
+------------------------------
++-------+---------+--------+--------+
+| EmpID | EmpName | Salary | DeptID |
++-------+---------+--------+--------+
+| 1001 | Ronaldo | 60000 | 2 |
+| 1002 | Messi | 40000 | 2 |
+| 1003 | Vini | 43000 | 2 |
+| 1004 | Mbappe | 15000 | 1 |
+| 1005 | Giroud | 35000 | 1 |
+| 1006 | Rashford | 45000 | 1 |
+| 1007 | Sancho | 25000 | 3 |
+| 1008 | Ramos | 75000 | 3 |
+| 1009 | Gavi | 95000 | 3 |
++-------+---------+--------+--------+
+
+------------------------------
+Expected OUTPUT
+------------------------------
++---------+--------+--------+
+| EmpName | DeptID | Salary |
++---------+--------+--------+
+| Giroud| 1 | 35000 |
+| Vini | 2 | 43000 |
+| Ramos| 3 | 75000 |
++---------+--------+--------+
+
+------------------------------
+Solution
+------------------------------
+------------------------------
+Method 1
+------------------------------
+Select EmpName, DeptID, Salary from 
+(select EmpName,DeptID,Salary, row_number() over(Partition By DeptID order by Salary desc)rownum
+from Employee_New)temp1 
+where rownum=2;
+------------------------------
+
+End
+------------------------------
+
+Tool Used: MYSQL
