@@ -560,4 +560,4 @@ Note 📝 : For solution check comment
 
 #dataengineering #dataanalytics #scenarioanalysis
 
-#sqlqueries #learningeveryday #day7   #scenario
+#sqlqueries #learningeveryday #day7   #scenariosax
