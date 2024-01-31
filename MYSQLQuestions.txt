@@ -379,3 +379,185 @@ End
 
 Tool Used: MYSQL
 #data
+
+------------------------------
+
+ SQL ➡️Day 7️⃣ ➡️ :
+
+
+
+ PROBLEM STATEMENT 
+
+ Student Table has three columns Student_Name, Total_Marks and Year. 
+
+
+
+Question :Write a SQL query to display Student_Name, 
+
+ Total_Marks, Year, Prev_Yr_Marks for those whose Total_Marks are greater than or equal to the previous year. 
+
+ ------------------------------
+
+ 
+
+-------------------------------------------------------------------------
+
+Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+CREATE TABLE Student_3(
+
+Student_Name varchar(30),
+
+Total_Marks int ,
+
+Year int)
+
+
+
+INSERT INTO Student_3 VALUES ('Rahul',90,2010);
+
+INSERT INTO Student_3 VALUES('Sanjay',80,2010);
+
+INSERT INTO Student_3 VALUES('Mohan',70,2010);
+
+INSERT INTO Student_3 VALUES('Rahul',90,2011);
+
+INSERT INTO Student_3 VALUES('Sanjay',85,2011);
+
+INSERT INTO Student_3 VALUES('Mohan',65,2011);
+
+INSERT INTO Student_3 VALUES('Rahul',80,2012);
+
+INSERT INTO Student_3 VALUES('Sanjay',80,2012);
+
+INSERT INTO Student_3 VALUES('Mohan',90,2012);
+
+
+
+INPUT:
+
+----------------+---------------+------
+
+Student_Name|    Total_Marks |Year
+
+----------------+---------------+------
+
+Rahul	| 90  |	2010
+
+Sanjay	| 80  |	2010
+
+Mohan	| 70  |	2010
+
+Rahul	| 90  |	2011
+
+Sanjay	| 85  |	2011
+
+Mohan	| 65  |	2011
+
+Rahul	| 80  |	2012
+
+Sanjay	| 80  |	2012
+
+Mohan | 90  |	2012
+
+------------------------------------------
+
+Output:
+
+----------------+------------+-------+------
+
+Student_name	|total_marks	|year	pre
+
+----------------+------------+-------+------
+
+Mohan	            |90	            |2012	|65
+
+Rahul	            |90	            |2011	|90
+
+Sanjay	            |85	            |2011	|80
+
+----------------+------------+-------+------
+
+
+
+Solution:
+
++-----------+
+
+Method 1:
+
++-----------+
+
+with cte as(
+
+select 
+
+Student_name,
+
+total_marks,
+
+lag(total_marks) over(partition by Student_name) as pre,
+
+year 
+
+from Student_3 
+
+order by student_name
+
+)
+
+select student_name,total_marks,year,pre
+
+from cte
+
+where total_marks>=pre
+
+
+
++-----------+
+
+Method 2:
+
++-----------+
+
+select a.student_name,a.total_marks,a.year,b.total_marks from Student_3 a join 
+
+Student_3 b on 
+
+a.student_name=b.student_name
+
+where a.year=b.year+1 and a.total_marks>=b.total_marks;
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+Do comment your solution and help with different approaches.
+
+Note 📝 : For solution check comment 
+
+
+
+
+
+
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday #day7   #scenario
