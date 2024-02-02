@@ -719,4 +719,4 @@ Do comment your solution and help with different approaches.
 
 #dataengineering #dataanalytics #scenarioanalysis
 
-#sqlqueries
+#sqlqueriess
