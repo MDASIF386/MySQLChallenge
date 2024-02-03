@@ -720,3 +720,89 @@ Do comment your solution and help with different approaches.
 #dataengineering #dataanalytics #scenarioanalysis
 
 #sqlqueriess
+
+------------------------------
+
+ SQL ➡️Day 1️⃣ 0️⃣ ➡️ Question :
+
+ PROBLEM STATEMENT :
+
+ Write a query to find number who has done both inc & out and sum of duration of out is greater than sum of duration of inc
+
+ ------------------------------
+
+ 
+
+-------------------------------------------------------------------------
+
+Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+create table call_det_10 (
+
+call_type varchar(21),
+
+call_num int,
+
+dur int);
+
+
+
+insert into call_det_10 values('OUT',98456,10);
+
+insert into call_det_10 values('OUT',98456,12);
+
+insert into call_det_10 values('OUT',98989,5);
+
+insert into call_det_10 values('INC',12121,7);
+
+insert into call_det_10 values('INC',98456,14);
+
+insert into call_det_10 values('INC',98989,8);
+
+insert into call_det_10 values('SMS',98456,10);
+
+insert into call_det_10 values('OUT',98452,12);
+
+insert into call_det_10 values('INC',98982,5);
+
+
+
+Solution:
+
+------------------------------------------------------------------------------
+
+With cte as
+
+(select *,sum(dur) over(partition by call_type order by call_type)rn from call_det_10 where call_type = 'out')
+
+,cte1 as 
+
+(select *,sum(dur) over(partition by call_type order by call_type)rn from call_det_10 where call_type = 'inc')
+
+
+
+select distinct c2.call_num from cte1 c2
+
+inner join cte c on c2.call_num = c.call_num and c.rn> c2.rn
+
+
+
+---------------------------------------------------------------------------
+
+
+
+Do comment your solution and help with different approaches.
+
+
+
+
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday #day10  #scenario 
