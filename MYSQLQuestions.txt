@@ -804,5 +804,4 @@ Do comment your solution and help with different approaches.
 #data #technology #learning #interview
 
 #dataengineering #dataanalytics #scenarioanalysis
-
-#sqlqueries #learningeveryday #day10  #scenariotesting #scenario
+ #learningeveryday #day10  #scenariotesting #scenario
