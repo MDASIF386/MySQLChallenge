@@ -867,3 +867,53 @@ hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
 hashtag#data hashtag#technology hashtag#learning hashtag#interview
 hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
 hashtag#sqlqueries hashtag#learningeveryday hashtag#day11 hashtag#scenario hashtag#mondaymotivation
+
+SQL ➡️Day 1️⃣ 2️⃣ ➡️ Question 
+PROBLEM STATEMENT 
+Write a SQL Query to get result as shown in output?
+------------------------------
+ 
+-------------------------------------------------------------------------
+Table and Insert SQL Script :
+-------------------------------------------------------------------------
+create table Data_16( Name varchar(20));
+
+insert into Data_16 value ('101');
+insert into Data_16 value ('Akash');
+insert into Data_16 value ('Mahindrakar');
+insert into Data_16 value ('Mumbai');
+insert into Data_16 value ('102');
+insert into Data_16 value ('Akshay');
+insert into Data_16 value ('Shirali');
+insert into Data_16 value ('Pune');
+
+Solution:
+-----------
+Method 1:
+-------------
+with tt as
+(
+select Name, CEIL(rownum/4) idd from data_16
+)
+select
+max(case when mod(rownum, 4) = 1 then Name else Null end) id,
+max(case when mod(rownum, 4) = 2 then Name else Null end) Fname,
+max(case when mod(rownum, 4) = 3 then Name else Null end) Lname,
+max(case when mod(rownum, 4) = 0 then Name else Null end) City
+from tt
+group by
+idd
+order by id;
+
+
+-------------------------------------------------------------------------
+Do comment your solution and help with different approaches.
+
+
+
+
+hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
+hashtag#data hashtag#technology hashtag#learning hashtag#interview 
+hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
+hashtag#sqlqueries hashtag#learningeveryday hashtag#day12 hashtag#scenario hashtag#contentmarketing 
+
