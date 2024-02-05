@@ -915,5 +915,6 @@ Do comment your solution and help with different approaches.
 hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
 hashtag#data hashtag#technology hashtag#learning hashtag#interview 
 hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
-hashtag#sqlqueries hashtag#learningeveryday hashtag#day12 hashtag#scenario hashtag#contentmarketing 
+hashtag#sqlqueries hashtag#learningeveryday hashtag#day12 hashtag#scenario #contentmarketing 
 
+s
