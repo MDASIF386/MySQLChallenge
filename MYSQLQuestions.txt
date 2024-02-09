@@ -1073,5 +1073,5 @@ SUM(CASE WHEN salesyear = '2000' THEN QuantitySold ELSE 0 END) as '2000' from sa
 
 --------------------------------------------------------------------
 
-Do comment your solution and help with different approaches.
+Do comment your solution and help with different approaches
 
