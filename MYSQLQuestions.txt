@@ -967,4 +967,111 @@ select machine_id, process_id , lead(timestamp) over (partition by machine_id,pr
 )
 where end_t is not null
 
-Do comment your solution and help with different approach
+Do comment your solution and help with different approach...
+
+SQL ➡️Day 1️⃣ 6️⃣ ➡️ Question 
+
+  PROBLEM STATEMENT 
+
+Write SQL to get the total Sales in year 1998,1999 and 2000 for all the products as shown below.
+
+-----------------------------
+
+-------------------------------------------------------------------------
+
+Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+
+
+create table salestbl_20 (
+
+id int identity (1,1), 
+
+product varchar(20), 
+
+salesyear int, 
+
+QuantitySold int)
+
+
+
+insert into salestbl_20 (product, salesyear, QuantitySold)
+
+values ('Laptop', 1998, 2500), 
+
+('Laptop', 1999, 3600),
+
+('Laptop', 2000, 4200),
+
+('Keyboard', 1998, 2300), 
+
+('Keyboard',1999, 3600), 
+
+('Keyboard', 2000, 5000),
+
+('Mouse', 1998, 6000),
+
+('Mouse', 1999, 3400), 
+
+('Mouse', 2000, 4600) 
+
+
+
+Solution:
+
+-----------------------
+
+Method 1:
+
+-----------------------
+
+with cte as(
+
+select salesyear, sum(quantitysold) as ts from salestbl_20 
+
+group by 1)
+
+select TotalSales, max(year_1998) as year_1998, max(year_1999) as year_1999, max(year_2000) as year_2000
+
+from (
+
+select 'TotalSales' as TotalSales,
+
+case 
+
+when salesyear = 1998 then ts else NULL end as year_1998,
+
+case
+
+when salesyear = 1999 then ts else NULL end as year_1999,
+
+case
+
+when salesyear = 2000 then ts else NULL end as year_2000
+
+from cte) a
+
+group by TotalSales;
+
+
+
+------------------------------------------------------------------
+
+Method 2:
+
+------------------------------------------------------------------
+
+select 'Totalsales' as Totalsales,
+
+SUM(CASE WHEN salesyear = '1998' THEN QuantitySold ELSE 0 END) as '1998',
+
+SUM(CASE WHEN salesyear = '1999' THEN QuantitySold ELSE 0 END) as '1999',
+
+SUM(CASE WHEN salesyear = '2000' THEN QuantitySold ELSE 0 END) as '2000' from salestbl_20;
+
+--------------------------------------------------------------------
+
+Do comment your solution and help with different approaches.
+
