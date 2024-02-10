@@ -1073,5 +1073,45 @@ SUM(CASE WHEN salesyear = '2000' THEN QuantitySold ELSE 0 END) as '2000' from sa
 
 --------------------------------------------------------------------
 
-Do comment your solution and help with different approaches
+Do comment your solution and help with different approachesSQL ➡️Day 1️⃣ 7️⃣ ➡️ Question 
+------------------------------
+ PROBLEM STATEMENT 
+Write a sql query to calculate running total of Quantity of each product as show in output below.
+------------------------------
+----------------------------------------
+Table and Insert SQL Script :
+----------------------------------------
+
+Create Table Inventory_21(
+ProdName Varchar(20),
+ProductCode Varchar(15),
+Quantity int,
+InventoryDate Date)
+
+Insert Into Inventory_21 values('Keyboard','K1001',20,'2020-03-01');
+Insert Into Inventory_21 values('Keyboard','K1001',30,'2020-03-02');
+Insert Into Inventory_21 values('Keyboard','K1001',10,'2020-03-03');
+Insert Into Inventory_21 values('Keyboard','K1001',40,'2020-03-04');
+Insert Into Inventory_21 values('Laptop','L1002',100,'2020-03-01');
+Insert Into Inventory_21 values('Laptop','L1002',60,'2020-03-02');
+Insert Into Inventory_21 values('Laptop','L1002',40,'2020-03-03');
+Insert Into Inventory_21 values('Monitor','M5005',30,'2020-03-01');
+Insert Into Inventory_21 values('Monitor','M5005',20,'2020-03-02');
+
+
+Solution:
+----------
+select 
+*,
+sum(Quantity) over( partition by ProductCode order by InventoryDate) as running_total 
+from 
+Inventory_21;
+---------------------------------------------------------------------------
+Do comment your solution and help with different approaches.
+
+
+hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
+hashtag#data hashtag#technology hashtag#learning hashtag#interview
+hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
+hashtag#sqlqueries hashtag#learningeveryday hashtag#day17 hashtag#scenario 
 
