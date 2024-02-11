@@ -1106,8 +1106,6 @@ select
 sum(Quantity) over( partition by ProductCode order by InventoryDate) as running_total 
 from 
 Inventory_21;
----------------------------------------------------------------------------
-Do comment your solution and help with different approaches.
 
 
 
