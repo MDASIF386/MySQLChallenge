@@ -1107,5 +1107,93 @@ sum(Quantity) over( partition by ProductCode order by InventoryDate) as running_
 from 
 Inventory_21;
 
+SQL ➡️Day 1️⃣ 8️⃣ ➡️ Question 
 
+   PROBLEM STATEMENT 
+
+ 
+
+Write a sql query to Print Alphabets A to Z in SQL
+
+
+
+----------------------
+
+Expected output :
+
+----------------------
+
+A
+
+B
+
+C
+
+D
+
+.
+
+.
+
+Z
+
+
+
+Solution:
+
+-----------------------------------------------------------------------------------
+
+Method 1:
+
+============
+
+SELECT Char(number+65) Letter
+
+ FROM master.dbo.spt_values
+
+ WHERE name IS NULL AND 
+
+ number < 26
+
+--------------------------------------------------------------------------------------
+
+Method2:
+
+==========
+
+DECLARE @Start int 
+
+set @Start=65 
+
+while(@Start<=90) 
+
+begin 
+
+print char(@Start) 
+
+set @Start=@Start+1 
+
+end
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+Do comment your solution and help with different approaches.
+
+
+
+
+
+
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday #day18 #scenario
 
