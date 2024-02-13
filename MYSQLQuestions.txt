@@ -1178,10 +1178,38 @@ end
 -----------------------------------------------------------------------------------
 
 
+SQL ➡️Day 1️⃣ 9️⃣  ➡️ Question
+PROBLEM STATEMENT ->
+
+Let's try some basic theory questions today:
+ 
+ What is SQL?
+-> It stands for Structured Query Language. A programming language used for interaction with relational database management systems (RDBMS). This includes fetching, updating, inserting, and removing data from tables.
+
+2) What are the types of SQL Commands?
+-> a. Data Definition Language(DDL): to define and modify the structure of a database.
+b. Data Manipulation Language(DML): to access, manipulate, and modify data in a database.
+c. Data Query Language (DQL) – to perform queries on the data in a database to retrieve the necessary information from it. 
+d. Data Control Language (DCL) – to control user access to the data in the database and give or revoke privileges to a specific user or a group of users.
+e. Transaction Control Language (TCL) – to control transactions in a database.
+
+3) Give some examples of common SQL commands of each type?
+-> a. DDL: Create, Alter Table, Drop and Truncate 
+b. DML: Update, Delete and Insert
+c. DQL: Select
+d. DCL: Grant and Revoke
+e. TCL: Commit, Roll back, Save Point, Set Transaction
 
 
 
-Do comment your solution and help with different approaches.
+hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
+hashtag#data hashtag#technology hashtag#learning hashtag#interview
+hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
+hashtag#sqlqueries hashtag#learningeveryday hashtag#day19 hashtag#scenario
+
+
+
+s.
 
 
 
@@ -1189,11 +1217,4 @@ Do comment your solution and help with different approaches.
 
 
 
-#sql #database #dataanalyst #practices
-
-#data #technology #learning #interview
-
-#dataengineering #dataanalytics #scenarioanalysis
-
-#sqlqueries #learningeveryday #day18 #scenario
 
