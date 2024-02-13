@@ -1202,15 +1202,6 @@ e. TCL: Commit, Roll back, Save Point, Set Transaction
 
 
 
-hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
-hashtag#data hashtag#technology hashtag#learning hashtag#interview
-hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
-hashtag#sqlqueries hashtag#learningeveryday hashtag#day19 hashtag#scenario
-
-
-
-s.
-
 
 
 
