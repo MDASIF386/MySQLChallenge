@@ -1305,6 +1305,78 @@ OUTPUT:
 
 +---------+-----------------
 
+SQL ➡️Day 2️⃣ 1️⃣➡️ Question->
+
+PROBLEM STATEMENT 
+
+
+
+Write SQL to turn the columns English, Maths and Science into rows. It should display Marks for each student for each subjects as shown below
+
+------------------------------
+
+
+
+-------------------------------------------------------------------------
+
+Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+
+
+Create Table studentinfo_23(
+
+studentname Varchar(20),
+
+english int,
+
+maths int,
+
+science int);
+
+
+
+insert into studentinfo_23 values ('David',85,90,88);
+
+insert into studentinfo_23 values ('John',75,85,80);
+
+insert into studentinfo_23 values ('Tom',83,80,92);
+
+-----------------------------------------------------------------------------------
+
+Solution
+
+-----------------------------------------------------------------------------------
+
+select StudentName, 'English' As Subject ,English as Marks from studentinfo_23
+
+union all 
+
+select StudentName, 'Maths' As Subject ,Maths as Marks from studentinfo_23
+
+union all 
+
+select StudentName, 'Science' As Subject ,Science as Marks from studentinfo_23
+
+order by StudentName;
+
+---------------------------------------------------------------------------------------
+
+
+
+Do comment your solution and help with different approaches.
+
+
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday #day21 #scenario
+
 
 
 
