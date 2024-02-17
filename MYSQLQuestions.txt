@@ -1454,7 +1454,115 @@ Do comment your solution and help with different approaches.
 
 
 
+SQL ➡️Day 2️⃣ 2️⃣ ➡️ Question
 
+------------------------------
+
+ PROBLEM STATEMENT 
+
+Write a query to print number of total match , won match and lost match by each team in cricket tournament.
+
+
+
+INPUT:
+
+create table world_cup
+
+(
+
+Team_1 Varchar(20),
+
+Team_2 Varchar(20),
+
+Winner Varchar(20)
+
+);
+
+INSERT INTO world_cup values('India','SL','India');
+
+INSERT INTO world_cup values('SL','Aus','Aus');
+
+INSERT INTO world_cup values('SA','Eng','Eng');
+
+INSERT INTO world_cup values('Eng','NZ','NZ');
+
+INSERT INTO world_cup values('Aus','India','India');
+
+
+
+select * from world_cup;
+
+
+
+
+
+SOLUTION:
+
+---------------------------------------------------------------------------------------
+
+SELECT 
+
+  team_name,
+
+  COUNT(*) AS total_match,
+
+  SUM(win_flag) AS won_match,
+
+  COUNT(*) - SUM(win_flag) AS lost_match
+
+FROM
+
+  (SELECT 
+
+    team_1 AS team_name,
+
+    CASE 
+
+      WHEN winner = 'team_1' THEN 1 
+
+      ELSE 0 
+
+    END AS win_flag
+
+  FROM 
+
+    world_cup
+
+  UNION ALL
+
+  SELECT 
+
+    team_2 AS team_name,
+
+    CASE 
+
+      WHEN winner = 'team_2' THEN 1 
+
+      ELSE 0 
+
+    END AS win_flag
+
+  FROM 
+
+    world_cup) a
+
+GROUP BY 
+
+  team_name
+
+ORDER BY 
+
+  won_match DESC;
+
+
+
+---------------------------------------------------------------------------
+
+Do comment your solution and help with different approaches.
+
+
+
+#sql #database #dataanalyst #practices #data #technology #learning #interview #dataengineering #dataanalytics #scenarioanalysis #sqlqueries #learningeveryday #day22 #scenario
 
 
 
