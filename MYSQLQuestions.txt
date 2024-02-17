@@ -1558,14 +1558,6 @@ ORDER BY
 
 ---------------------------------------------------------------------------
 
-Do comment your solution and help with different approaches.
-
-
-
-#sql #database #dataanalyst #practices #data #technology #learning #interview #dataengineering #dataanalytics #scenarioanalysis #sqlqueries #learningeveryday #day22 #scenario
-
-
-
 
 
 
