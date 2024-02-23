@@ -1776,3 +1776,147 @@ GROUP BY actor_id
 
 HAVING count(*) >= 3
 
+--------------------------------------------------------------------------------------
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+
+#sqlqueries #learningeveryday #day27 #scenario
+
+SQL ➡️Day 2️⃣ 8️⃣  ➡️ Question:
+
+------------------------------------------------------------
+
+🎯 PROBLEM STATEMENT
+
+ ----------------------------------------------
+
+Write an SQL query to find all the authors that viewed at least one of their own articles, sorted in ascending order by their id.
+
+ 
+
+---------------------------------------------------------------------
+
+📝 Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+ 
+
+create table article_views
+
+(
+
+article_id int,
+
+author_id int,
+
+viewer_id int,
+
+view_date date
+
+);
+
+ 
+
+insert into article_views
+
+values
+
+(1,3,5,'2019–08–01'),
+
+(1,3,6,'2019–08–02'),
+
+(2,7,7,'2019–08–01'),
+
+(2,7,6,'2019–08–02'),
+
+(4,7,1,'2019–07–22'),
+
+(3,4,4,'2019–07–21'),
+
+(3,4,4,'2019–07–21');
+
+ 
+
+ 
+
+------------------------------
+
+input table
+
+------------------------------
+
+ 
+
++------------+-----------+-----------+------------+
+
+| article_id | author_id | viewer_id | view_date |
+
++------------+-----------+-----------+------------+
+
+| 1         | 3        | 5        | 2019-08-01 |
+
+| 1         | 3        | 6        | 2019-08-02 |
+
+| 2         | 7        | 7        | 2019-08-01 |
+
+| 2         | 7        | 6        | 2019-08-02 |
+
+| 4         | 7        | 1        | 2019-07-22 |
+
+| 3         | 4        | 4        | 2019-07-21 |
+
+| 3         | 4        | 4        | 2019-07-21 |
+
++------------+-----------+-----------+------------+
+
+ 
+
+ 
+
+------------------------------
+
+OUTPUT
+
+------------------------------
+
++------+
+
+| id  |
+
++------+
+
+| 4   |
+
+| 7   |
+
++------+
+
+------------------------------------------------------------------------------------
+
+Solution->
+
+-------------------------------------------------------------------------------------
+
+SELECT DISTINCT author_id
+
+FROM article_views
+
+WHERE author_id = viewer_id
+
+ORDER BY author_id;
+
+--------------------------------------------------------------------------------------
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday #day28 #scenario
