@@ -2011,10 +2011,3 @@ WHERE U.purchase_date BETWEEN P.start_date AND P.end_date
 
 GROUP BY P.product_id;
 
---------------------------------------------------------------------------------------#sql #database #dataanalyst #practices
-
-#data #technology #learning #interview
-
-#dataengineering #dataanalytics #scenarioanalysis
-
-#sqlqueries #learningeveryday #day28 #scenario
