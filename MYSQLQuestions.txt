@@ -1913,7 +1913,105 @@ ORDER BY author_id;
 
 --------------------------------------------------------------------------------------
 
-#sql #database #dataanalyst #practices
+SQL ➡️Day 2️⃣ 9️⃣ ➡️ Question:
+
+------------------------------------------------------------
+
+🎯  PROBLEM STATEMENT
+
+ ----------------------------------------------
+
+write an SQL query to find the average selling price for each product.
+
+average_price should be rounded to 2 decimal places.
+
+
+
+
+
+---------------------------------------------------------------------
+
+📝 Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+ 
+
+create table prices
+
+(
+
+product_id int,
+
+start_date date,
+
+end_date date,
+
+price int
+
+);
+
+ 
+
+insert into prices
+
+values
+
+(1,’2019–02–17',’2019–02–28',5),
+
+(1,’2019–03–01',’2019–03–22',20),
+
+(2,’2019–02–01',’2019–02–20',15),
+
+(2,’2019–02–21',’2019–03–31',30);
+
+ 
+
+create table UnitsSold
+
+(
+
+product_id int,
+
+purchase_date date,
+
+units int
+
+);
+
+ 
+
+insert into UnitsSold
+
+values
+
+(1,’2019–02–25',100),
+
+(1,’2019–03–01',15),
+
+(2,’2019–02–10',200),
+
+(2,’2019–03–22',30)
+
+ 
+
+------------------------------------------------------------------------------------
+
+Solution->
+
+-------------------------------------------------------------------------------------
+
+SELECT P.product_id, ROUND(CAST(SUM(P.price * U.units) AS DECIMAL) / SUM(U.units), 2) AS avg_price
+
+FROM prices P
+
+JOIN UnitsSold U ON P.product_id = U.product_id
+
+WHERE U.purchase_date BETWEEN P.start_date AND P.end_date
+
+GROUP BY P.product_id;
+
+--------------------------------------------------------------------------------------#sql #database #dataanalyst #practices
 
 #data #technology #learning #interview
 
