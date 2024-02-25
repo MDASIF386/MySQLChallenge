@@ -2089,7 +2089,8 @@ where COALESCE(referee_id,0) != 2 ;
 
 Explanation:
 
-The SQL query uses the COALESCE function to handle null values in the referee_id column. It compares each customer's referee_id to 2 and selects the names of customers whose referee_id is not equal to 2.
+The SQL query uses the COALESCE function to handle null values in the referee_id column.
+ It compares each customer's referee_id to 2 and selects the names of customers whose referee_id is not equal to 2.
 
 
 
