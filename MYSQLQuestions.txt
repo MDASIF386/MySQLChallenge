@@ -2017,3 +2017,80 @@ WHERE U.purchase_date BETWEEN P.start_date AND P.end_date
 
 GROUP BY P.product_id;
 
+
+
+SQL ➡️Day 3️⃣ 0️⃣  ➡️ Question:
+
+------------------------------------------------------------
+
+🎯 PROBLEM STATEMENT
+
+ ----------------------------------------------
+
+Find the names of the customer that are not referred by the customer with id = 2.
+
+---------------------------------------------------------------------
+
+📝 Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+ 
+
+
+
+Input:
+
+Customer table:
+
++----+------+------------+
+
+| id | name | referee_id |
+
++----+------+------------+
+
+| 1 | Will | null    |
+
+| 2 | Jane | null    |
+
+| 3 | Alex | 2     |
+
+| 4 | Bill | null    |
+
+| 5 | Zack | 1     |
+
+| 6 | Mark | 2     |
+
++----+------+------------+
+
+ 
+
+------------------------------------------------------------------------------------
+
+Solution->
+
+-------------------------------------------------------------------------------------
+
+Solution:
+
+
+
+Code:
+
+select name from customer
+
+where COALESCE(referee_id,0) != 2 ;
+
+
+
+--------------------------------------------------------------------------------------
+
+
+
+Explanation:
+
+The SQL query uses the COALESCE function to handle null values in the referee_id column. It compares each customer's referee_id to 2 and selects the names of customers whose referee_id is not equal to 2.
+
+
+
+---------------------------------------------------------------------------------------
