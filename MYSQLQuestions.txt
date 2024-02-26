@@ -2097,3 +2097,97 @@ The SQL query uses the COALESCE function to handle null values in the referee_id
 
 
 ---------------------------------------------------------------------------------------
+
+SQL ➡️Day 3️⃣ 1️⃣  ➡️ Question:
+
+------------------------------------------------------------
+
+🎯 PROBLEM STATEMENT 
+
+ ----------------------------------------------
+
+Can you write a SQL query to find the biggest number, which only appears once. If there is no such number, just output null.
+
+ 
+
+ 
+
+---------------------------------------------------------------------
+
+📝 Table and Insert SQL Script :
+
+-------------------------------------------------------------------------
+
+Create table number (num int);
+
+ 
+
+insert into number (num) values (8);
+
+insert into number (num) values (8);
+
+insert into number (num) values (3);
+
+insert into number (num) values (3);
+
+insert into number (num) values (1);
+
+insert into number (num) values (4);
+
+insert into number (num) values (5);
+
+insert into number (num) values (6);
+
+ 
+
+ 
+
+
+
+-------------------------------------------------------------------------------------
+
+Solution:
+
+
+
+SELECT *
+
+FROM number
+
+GROUP BY num
+
+HAVING COUNT(*) = 1
+
+ORDER BY num DESC
+
+LIMIT 1
+
+
+
+
+
+--------------------------------------------------------------------------------------
+
+Do comment your different approaches.
+
+
+
+---------------------------------------------------------------------------------------
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday 
+
+#SQLChallenge #DataAnalysis #SQLQuery
+
+#sql #database #dataanalyst #practice
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #SQLscenario
+
+#sqlqueries #learningeveryday #day31 #share
