@@ -2166,28 +2166,4 @@ LIMIT 1
 
 
 
---------------------------------------------------------------------------------------
 
-Do comment your different approaches.
-
-
-
----------------------------------------------------------------------------------------
-
-#sql #database #dataanalyst #practices
-
-#data #technology #learning #interview
-
-#dataengineering #dataanalytics #scenarioanalysis
-
-#sqlqueries #learningeveryday 
-
-#SQLChallenge #DataAnalysis #SQLQuery
-
-#sql #database #dataanalyst #practice
-
-#data #technology #learning #interview
-
-#dataengineering #dataanalytics #SQLscenario
-
-#sqlqueries #learningeveryday #day31 #share
