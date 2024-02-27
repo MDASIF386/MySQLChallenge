@@ -2165,5 +2165,36 @@ LIMIT 1
 
 
 
+SQL ➡️Day 3️⃣ 2️⃣ ➡️ Question:
+------------------------------------------------------------
+🎯 PROBLEM STATEMENT
+----------------------------------------------
+What does ACID mean?
+
+
+🔹 𝐀𝐭𝐨𝐦𝐢𝐜𝐢𝐭𝐲
+The writes in a transaction are executed all at once and cannot be broken into smaller parts. If there are faults when executing the transaction, the writes in the transaction are rolled back.
+
+So atomicity means “all or nothing”.
+
+🔹 𝐂𝐨𝐧𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐲
+Unlike “consistency” in CAP theorem, which means every read receives the most recent write or an error, here consistency means preserving database invariants. Any data written by a transaction must be valid according to all defined rules and maintain the database in a good state.
+
+🔹 𝐈𝐬𝐨𝐥𝐚𝐭𝐢𝐨𝐧
+When there are concurrent writes from two different transactions, the two transactions are isolated from each other. The most strict isolation is “serializability”, where each transaction acts like it is the only transaction running in the database. However, this is hard to implement in reality, so we often adopt loser isolation level.
+
+🔹 𝐃𝐮𝐫𝐚𝐛𝐢𝐥𝐢𝐭𝐲
+Data is persisted after a transaction is committed even in a system failure. In a distributed system, this means the data is replicated to some other nodes.
+---------------------------------------------------------------------------------------
+hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
+hashtag#data hashtag#technology hashtag#learning hashtag#interview
+hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
+hashtag#sqlqueries hashtag#learningeveryday 
+hashtag#SQLChallenge hashtag#DataAnalysis hashtag#SQLQuery
+hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practice
+hashtag#data hashtag#technology hashtag#learning hashtag#interview
+hashtag#dataengineering hashtag#dataanalytics hashtag#SQLscenario
+hashtag#sqlqueries hashtag#learningeveryday hashtag#day32 hashtag#share
+
 
 
