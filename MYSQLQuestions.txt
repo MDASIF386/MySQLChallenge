@@ -2186,15 +2186,7 @@ When there are concurrent writes from two different transactions, the two transa
 🔹 𝐃𝐮𝐫𝐚𝐛𝐢𝐥𝐢𝐭𝐲
 Data is persisted after a transaction is committed even in a system failure. In a distributed system, this means the data is replicated to some other nodes.
 ---------------------------------------------------------------------------------------
-hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practices
-hashtag#data hashtag#technology hashtag#learning hashtag#interview
-hashtag#dataengineering hashtag#dataanalytics hashtag#scenarioanalysis
-hashtag#sqlqueries hashtag#learningeveryday 
-hashtag#SQLChallenge hashtag#DataAnalysis hashtag#SQLQuery
-hashtag#sql hashtag#database hashtag#dataanalyst hashtag#practice
-hashtag#data hashtag#technology hashtag#learning hashtag#interview
-hashtag#dataengineering hashtag#dataanalytics hashtag#SQLscenario
-hashtag#sqlqueries hashtag#learningeveryday hashtag#day32 hashtag#share
+
 
 SQL ➡️Day 3️⃣ 3️⃣➡️ Question:
 
