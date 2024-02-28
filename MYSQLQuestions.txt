@@ -2196,5 +2196,83 @@ hashtag#data hashtag#technology hashtag#learning hashtag#interview
 hashtag#dataengineering hashtag#dataanalytics hashtag#SQLscenario
 hashtag#sqlqueries hashtag#learningeveryday hashtag#day32 hashtag#share
 
+SQL ➡️Day 3️⃣ 3️⃣➡️ Question:
 
+------------------------------------------------------------
+
+🎯 PROBLEM STATEMENT:
+
+----------------------------------------------
+
+INPUT:
+
+------------------------------------
+
+EmployeeTable:
+
+| Department | EmployeeName |
+
+-------------------------------
+
+| IT | John |
+
+| IT | Jane |
+
+| HR | Mike |
+
+| HR | Alice |
+
+-----------------------------------------------
+
+OUTPUT:
+
+-----------------------------------------
+
+| Department | Employees |
+
+----------------------------
+
+| IT | John, Jane |
+
+| HR | Mike, Alice |
+
+-------------------------------------------------------------------------------------
+
+this kind of aggregation can generally be used in reporting / Data warehousing layer where you want to showcase the data in a certain way.
+
+-----------------------------------------------------------------------------------
+
+Solution:
+
+--------------------------------------------------------------------------------------
+
+Select department,STRING_AGG(EmployeeName,',') as EmployeeName
+
+from Employee
+
+group by department;
+
+--------------------------------------------------------------------------------------
+
+Solution is in MySql server
+
+---------------------------------------------------------------------------------------
+
+#sql #database #dataanalyst #practices
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #scenarioanalysis
+
+#sqlqueries #learningeveryday 
+
+#SQLChallenge #DataAnalysis #SQLQuery
+
+#sql #database #dataanalyst #practice
+
+#data #technology #learning #interview
+
+#dataengineering #dataanalytics #SQLscenario
+
+#sqlqueries #learningeveryday #day33 #share
 
